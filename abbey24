@@ -1,0 +1,18 @@
+import math
+k = int(input("Number of values--->"))
+j = input("Enter Values--->").split(" ")
+out=[]
+l = 0
+func = lambda x: math.floor(((x**2)/100) % 10000)
+for i in range(len(j)):
+    c = 0
+    results=[]
+    results.append(int(j[i]))
+    l = func(results[c])
+    while all( n != l for n in results):
+        results.append(l)
+        c += 1
+        l = func(results[c])
+
+    out.append(len(results))
+print(out)
