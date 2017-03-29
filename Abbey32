@@ -1,0 +1,17 @@
+N = input("Number of victims---> ")
+K = input("Death Seat---> ")
+n=int(N)
+k=int(K)-1
+
+j=list(range(1,n+1))
+print(len(j))
+
+while len(j)>1:
+    j.pop(k)
+    k += int(K)-1
+    if k >= len(j):
+        k = k % len(j)
+        n = len(j)
+
+print(j)
+
