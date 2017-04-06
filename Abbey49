@@ -1,0 +1,27 @@
+num_rnds = input("Number of Rounds---->")
+sentinel = ''
+winner = []
+rounds = []
+output = []
+
+print("Rounds:")
+for line in iter(input,sentinel):
+    rounds.append(line)
+
+print(rounds)
+
+for i in range(len(rounds)):
+    battle = []
+    battle = rounds[i].split(" ")
+    players = [0,0]
+    for j in range(len(battle)):
+        if battle[j].find("S") != -1 and battle[j].find("R") != -1:
+            players[battle[j].find("R")] += 1
+        elif battle[j].find("S") != -1 and battle[j].find("P") != -1:
+            players[battle[j].find("S")] += 1
+        elif battle[j].find("P") != -1 and battle[j].find("R") != -1:
+            players[battle[j].find("P")] += 1
+
+    winner.append(players.index(max(players)) + 1)
+
+print(winner)
